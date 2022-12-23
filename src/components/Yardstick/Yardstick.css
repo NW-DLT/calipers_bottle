@@ -1,0 +1,20 @@
+.scaleElement {
+  height: 1cm;
+  width: 20px;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+.scaleElementDash {
+  position: relative;
+  top: -0.35cm;
+  left: 0.6cm;
+}
+
+.innerScaleElement {
+  position: relative;
+  top: -0.55cm;
+  height: calc(1mm - 0.5px);
+  width: 10px;
+  border-bottom: 1px solid white;
+}
