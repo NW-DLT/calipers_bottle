@@ -23,6 +23,7 @@ export const App: React.FC<{}> = () => {
     color: "brown",
     density: 1,
     radius: 0,
+    text: "",
   });
 
   const [glass, setGlass] = useState<Liquid>({
@@ -34,29 +35,29 @@ export const App: React.FC<{}> = () => {
   const [start, setStart] = useState<boolean>(false);
 
   const circles: CircleProps[] = [
-    { color: "brown", density: 8960, radius: 10, callback: setCircleValues },
-    { color: "blue", density: 7874, radius: 10, callback: setCircleValues },
-    { color: "gray", density: 850, radius: 10, callback: setCircleValues },
+    { color: "#b87333", density: 8960, radius: 10, text: "Медь", callback: setCircleValues },
+    { color: "#738595", density: 7874, radius: 10, text: "Железо", callback: setCircleValues },
+    { color: "#ffd700", density: 19320, radius: 10, text: "Золото", callback: setCircleValues },
   ];
 
   const buttons: ButtonProps[] = [
     {
-      data: { color: "blue", density: 997, viscosity: 1.793 },
+      data: { color: "#86aba5", density: 997, viscosity: 1.793 },
       text: "вода",
       onClick: setGlass,
     },
     {
-      data: { color: "yellow", density: 750, viscosity: 0.65 },
+      data: { color: "#665500", density: 750, viscosity: 0.65 },
       text: "бензин",
       onClick: setGlass,
     },
     {
-      data: { color: "black", density: 1030, viscosity: 1 },
+      data: { color: "#313330", density: 1030, viscosity: 1 },
       text: "нефть",
       onClick: setGlass,
     },
     {
-      data: { color: "white", density: 2700, viscosity: 1.819 },
+      data: { color: "#dbeefc", density: 2700, viscosity: 1.819 },
       text: "керосин",
       onClick: setGlass,
     },
@@ -75,7 +76,7 @@ export const App: React.FC<{}> = () => {
         >
           <TopContainer>
             {circles.map((props) => (
-              <Circle key={props.color} {...props} />
+              <Circle key={props.color} {...props}/>
             ))}
           </TopContainer>
           <Container justifyContent="center">

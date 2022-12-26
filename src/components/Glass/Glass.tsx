@@ -43,7 +43,6 @@ export const Glass: React.FC<Props> = ({
   const [height, setHeight] = useState<number>(0);
   const [rerenderCount, setRerenderCount] = useState<number>(rrc);
   useEffect(() => {
-    console.log("ЛОХ");
     if (rerenderCount >= 0) {
       setTimeout(() => {
         setHeight((prev) => prev + mmInFrame);
@@ -137,7 +136,7 @@ const Stopwatch: React.FC<{
         </button>
         <button onClick={() => setRunning(false)}>СТОП</button>
         <button
-          onClick={() => {
+          onClick={() => { window.location.reload()
             setTime(0);
             setStart(false);
             setRunning(false);

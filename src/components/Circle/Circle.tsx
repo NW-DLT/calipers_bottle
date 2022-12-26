@@ -6,6 +6,7 @@ export interface CircleProps {
   color: string;
   density: number;
   radius: number;
+  text: string;
   callback?: React.Dispatch<React.SetStateAction<CircleProps>>;
 }
 
@@ -13,12 +14,14 @@ export const Circle: React.FC<CircleProps> = (props) => {
   if (!props) {
     return <></>;
   }
-  const { radius, color, density, callback } = props;
+  const { radius, color, density, text, callback } = props;
   return (
-    <div
+    <div>
+      <text>{text}</text>
+      <div
       onClick={() => {
         callback
-          ? callback({ ...props, radius: getRandomArbitrary(5, 15) })
+          ? callback({ ...props, radius: getRandomArbitrary(5, 15), text: "" })
           : void (() => {})();
       }}
       className={cn("circle")}
@@ -28,6 +31,7 @@ export const Circle: React.FC<CircleProps> = (props) => {
         backgroundColor: color,
       }}
     ></div>
+    </div>
   );
 };
 
